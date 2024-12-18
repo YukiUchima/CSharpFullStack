@@ -19,6 +19,20 @@
         -> add API project into solution
 ```
 
+## Major Steps:
+
+1. Initialize Project folders with NEW sln file and NEW webapi (API/)
+2. dotnet sln add API/
+3. .NET: Generate Assets For Build and Debug (.vscode folder)
+4. NugetPackages:
+
+- Add EFCore.Design and EFCore.Sqlite: API/Properties/API.csproj
+
+5. Create Entities: Entities/Product.cs
+6. Create Data/StoreContext.cs
+7. Create Data/DBInitializer.cs for sample data
+8. Create Controllers/ProductsController.cs to handle HTTPGet
+
 ## Entities (class)
 
 - Create new folder called Entities inside API/
@@ -94,4 +108,10 @@
   dotnet tool update --global dotnet-ef
   # Run dotnet ef command to see information
   dotnet ef
+```
+
+### Setup SqLite data with Migrations
+
+```bash
+  $ dotnet ef migrations add InitialCreate -o Data/Migrations
 ```
