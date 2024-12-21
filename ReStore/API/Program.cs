@@ -16,6 +16,7 @@ builder.Services.AddDbContext<StoreContext>(opt =>
     // Add Configuration for database connection string
     opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")); //UseSqlite (entity framework)
 });
+builder.Services.AddCors();
 
 var app = builder.Build();
 
@@ -27,7 +28,10 @@ if (app.Environment.IsDevelopment())
 }
 
 // app.UseHttpsRedirection(); // only for production
-
+app.UseCors(opt =>
+{
+    opt.AllowAnyHeader().AllowAnyHeader().WithOrigins("http://localhost:3000");
+});
 app.UseAuthorization();
 
 app.MapControllers();
@@ -47,3 +51,4 @@ catch (Exception ex)
 }
 
 app.Run();
+

@@ -115,3 +115,9 @@
 ```bash
   $ dotnet ef migrations add InitialCreate -o Data/Migrations
 ```
+
+## RUN the app
+
+```bash
+  dotnet watch run --no-hot-reload
+```
