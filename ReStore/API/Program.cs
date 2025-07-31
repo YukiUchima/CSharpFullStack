@@ -1,5 +1,5 @@
 using API.Data;
-using API.Data.Migrations;
+// using API.Data.Migrations; // not required? 
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
