@@ -1,15 +1,16 @@
-
 using API.Entities;
 
-namespace API.Data.Migrations;
-    public static class DbInitializer
-    {
-        public static void Initialize(StoreContext context){
-            if (context.Products.Any()) return;
+namespace API.Data;
 
-            List<Product> products = new List<Product>{
-                new Product
-                {
+public static class DbInitializer
+{
+    public static void Initialize(StoreContext context)
+    {
+        if (context.Products.Any()) return;
+
+        List<Product> products =
+        [
+            new() {
                     Name = "Angular Speedster Board 2000",
                     Description =
                         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
@@ -19,8 +20,7 @@ namespace API.Data.Migrations;
                     Type = "Boards",
                     QuantityInStock = 100
                 },
-                new Product
-                {
+                new() {
                     Name = "Green Angular Board 3000",
                     Description = "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
                     Price = 15000,
@@ -29,7 +29,7 @@ namespace API.Data.Migrations;
                     Type = "Boards",
                     QuantityInStock = 100
                 },
-                new Product
+                new()
                 {
                     Name = "Core Board Speed Rush 3",
                     Description =
@@ -40,7 +40,7 @@ namespace API.Data.Migrations;
                     Type = "Boards",
                     QuantityInStock = 100
                 },
-                new Product
+                new()
                 {
                     Name = "Net Core Super Board",
                     Description =
@@ -51,7 +51,7 @@ namespace API.Data.Migrations;
                     Type = "Boards",
                     QuantityInStock = 100
                 },
-                new Product
+                new()
                 {
                     Name = "React Board Super Whizzy Fast",
                     Description =
@@ -62,7 +62,7 @@ namespace API.Data.Migrations;
                     Type = "Boards",
                     QuantityInStock = 100
                 },
-                new Product
+                new()
                 {
                     Name = "Typescript Entry Board",
                     Description =
@@ -73,7 +73,7 @@ namespace API.Data.Migrations;
                     Type = "Boards",
                     QuantityInStock = 100
                 },
-                new Product
+                new()
                 {
                     Name = "Core Blue Hat",
                     Description =
@@ -84,7 +84,7 @@ namespace API.Data.Migrations;
                     Type = "Hats",
                     QuantityInStock = 100
                 },
-                new Product
+                new()
                 {
                     Name = "Green React Woolen Hat",
                     Description =
@@ -95,7 +95,7 @@ namespace API.Data.Migrations;
                     Type = "Hats",
                     QuantityInStock = 100
                 },
-                new Product
+                new()
                 {
                     Name = "Purple React Woolen Hat",
                     Description =
@@ -106,7 +106,7 @@ namespace API.Data.Migrations;
                     Type = "Hats",
                     QuantityInStock = 100
                 },
-                new Product
+                new()
                 {
                     Name = "Blue Code Gloves",
                     Description =
@@ -117,7 +117,7 @@ namespace API.Data.Migrations;
                     Type = "Gloves",
                     QuantityInStock = 100
                 },
-                new Product
+                new()
                 {
                     Name = "Green Code Gloves",
                     Description =
@@ -128,7 +128,7 @@ namespace API.Data.Migrations;
                     Type = "Gloves",
                     QuantityInStock = 100
                 },
-                new Product
+                new()
                 {
                     Name = "Purple React Gloves",
                     Description =
@@ -139,7 +139,7 @@ namespace API.Data.Migrations;
                     Type = "Gloves",
                     QuantityInStock = 100
                 },
-                new Product
+                new()
                 {
                     Name = "Green React Gloves",
                     Description =
@@ -150,7 +150,7 @@ namespace API.Data.Migrations;
                     Type = "Gloves",
                     QuantityInStock = 100
                 },
-                new Product
+                new()
                 {
                     Name = "Redis Red Boots",
                     Description =
@@ -161,7 +161,7 @@ namespace API.Data.Migrations;
                     Type = "Boots",
                     QuantityInStock = 100
                 },
-                new Product
+                new()
                 {
                     Name = "Core Red Boots",
                     Description =
@@ -172,7 +172,7 @@ namespace API.Data.Migrations;
                     Type = "Boots",
                     QuantityInStock = 100
                 },
-                new Product
+                new()
                 {
                     Name = "Core Purple Boots",
                     Description =
@@ -183,7 +183,7 @@ namespace API.Data.Migrations;
                     Type = "Boots",
                     QuantityInStock = 100
                 },
-                new Product
+                new()
                 {
                     Name = "Angular Purple Boots",
                     Description = "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
@@ -193,7 +193,7 @@ namespace API.Data.Migrations;
                     Type = "Boots",
                     QuantityInStock = 100
                 },
-                new Product
+                new()
                 {
                     Name = "Angular Blue Boots",
                     Description =
@@ -204,14 +204,14 @@ namespace API.Data.Migrations;
                     Type = "Boots",
                     QuantityInStock = 100
                 },
-            };
+            ];
 
-            // foreach (Product prod in products)
-            // {
-            //     context.Products.Add(prod);
-            // }
+        // foreach (Product prod in products)
+        // {
+        //     context.Products.Add(prod);
+        // }
 
-            context.Products.AddRange(products);
-            context.SaveChanges();
-        }
+        context.Products.AddRange(products);
+        context.SaveChanges();
     }
+}
